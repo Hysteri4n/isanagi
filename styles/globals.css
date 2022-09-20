@@ -1,9 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
 }
 
 a {
@@ -15,12 +19,152 @@ a {
   box-sizing: border-box;
 }
 
+:root {
+  --btnPrimary: linear-gradient(rgb(96, 125, 239), rgb(43, 75, 203));
+  --btnSecondary: linear-gradient(rgb(50, 58, 88), rgb(44, 48, 70));
+  --btnWarning: linear-gradient(rgb(254, 188, 23), rgb(208, 84, 7));
+  --btnDanger: linear-gradient(rgb(252, 41, 41), rgb(209, 8, 8));
+  --btnSuccess: linear-gradient(rgb(54, 197, 254), rgb(7, 131, 208));
+  --primary: rgba(82, 110, 221);
+  --white: rgba(255, 255, 255);
+  --white2: rgb(218, 218, 218);
+  --grey: rgb(136, 136, 136);
+  --dark0: rgb(16, 17, 22);
+  --dark1: rgb(24, 27, 37);
+  --dark2: rgb(31, 35, 48);
+  --dark3: rgb(44, 48, 70);
+  --dark4: rgb(50, 58, 88);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
     color: white;
-    background: black;
+    background: var(--dark0);
   }
+}
+
+/* button style */
+
+.btn {
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 8px;
+  display: flex;
+  gap: 6px;
+  transition: all ease 0.2s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+}
+
+/* button color */
+
+.btn--pr {
+  color: var(--white);
+  transition: ease-in-out 0.2s;
+  background: var(--btnPrimary);
+  border: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn--sc {
+  color: var(--white);
+  background: var(--btnSecondary);
+  transition: ease-in-out 0.2s;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn--w {
+  color: var(--white);
+  background: var(--btnWarning);
+  font-weight: 600;
+  transition: ease-in-out 0.2s;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn--d {
+  color: var(--white);
+  background: var(--btnDanger);
+  transition: ease-in-out 0.2s;
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn--s {
+  color: var(--white);
+  background: var(--btnSuccess);
+  font-weight: 600;
+  border: none;
+  transition: ease-in-out 0.2s;
+  white-space: nowrap;
+}
+
+.btn--pr:hover,
+.btn--sc:hover,
+.btn--w:hover,
+.btn--d:hover,
+.btn--s:hover {
+  filter: brightness(1.2);
+}
+
+/* button size */
+
+.btn--sm {
+  font-size: 0.8rem;
+  padding: 8px 22px;
+  border-radius: 4px;
+}
+.btn--sm--full {
+  font-size: 0.8rem;
+  padding: 8px 22px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.btn--med {
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 6px;
+}
+
+.btn--med--full {
+  font-size: 1rem;
+  padding: 12px 28px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.btn--lg {
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  border-radius: 6px;
+}
+
+.btn--lg--full {
+  font-size: 1.4rem;
+  width: 100%;
+  padding: 12px 30px;
+  border-radius: 6px;
+}
+
+.btn--xl {
+  font-size: 1.8rem;
+  padding: 12px 50px;
+  border-radius: 8px;
+}
+
+.btn--xl--full {
+  font-size: 1.8rem;
+  width: 100%;
+  padding: 12px 50px;
+  border-radius: 8px;
 }
