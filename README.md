@@ -1,34 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- note -->
 
-## Getting Started
+user role :
 
-First, run the development server:
+    0. default (default role)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    1. author (creator role)
+    2. Writer (creator role)
+    3. Illustrator (creator role)
+    4. Penciller (creator role)
+    5. Inker (creator role)
+    6. Colourist (creator role)
+    7. Letterer (creator role)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    8. editor (supporter role)
+    9. assistent (supporter role)
+    10. translator (supporter role)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+    11. publisher (special role)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+User badge :
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    - premium badge (accessable only when a user have isanagi+ subscription on active)
+    	- writeable badge (max 20character)
 
-## Learn More
+    - creator badge (earn by published a comic with specific role or being tag in a creator role):
+    	- author		(creator whos doing solo work)
+    	- Writer		(creator whos write the story)
+    	- Penciller		(creator whos sketching the illustration)
+    	- Inker			(creator whos doing illustration from sketch)
+    	- Colourist		(creator whos coloring or finalizing final illustration)
+    	- Letterer		(creator whos create the storyboard)
+    	- Illustrator	(creator whos doing full work on illustration or drawing)
 
-To learn more about Next.js, take a look at the following resources:
+    - publisher badge (earn by signed up as publisher)
+    	- Publisher
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    - supporter badge (earn by signed up on a specific role or chosen by creator)
+    	- Editor
+    	- Assistent
+    	- Translator
 
-## Deploy on Vercel
+    - default badge (earn by doing a specific action)
+    	- Reader					(read 10 chapter of any tittles)
+    	- limitless Reader			(subscribe isanagi+ for 12months)
+    	- loyal subscriber			(subscribe isanagi+ for 24 months)
+    	- The humbler				(collect 10k chapter)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    	- good author				(sold 100k chapter)
+    	- blessed author			(sold 1m chapter)
+    	- insane author				(sold 100m chapter)
+    	- money printer				(sold 1b chapter)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    	- good supporter			(having 10 ongoing/finish project or 1 year total contract)
+    	- helpful supporter			(having 50 ongoing/finish project or 3 year total contract)
+    	- angelic supporter			(having 100 ongoing/finish project or 5 year total contract)
+
+    	- Comic lover				(collect 100 chapter)
+    	- Comic addict				(collect 1k chapter)
+    	- Comic collector			(collect 10k chapter)
+
+    	- 'comic tittle' supporter	(bougth 10 chapter of a specific tittle)
+    	- 'comic tittle' raiser		(bougth 50 chapter of a specific tittle or bought all chapter of a complete tittle)
+    	- 'comic tittle' huge fan	(bougth 100 chapter of a specific tittle or bought all chapter of a complete tittle)
+    	- 'comic tittle' superfan	(bougth 150+ chapter of a specific tittle)
