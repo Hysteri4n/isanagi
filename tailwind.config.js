@@ -16,6 +16,10 @@ module.exports = {
         auto: 'auto',
         full: '100%',
       },
+      boxShadow: {
+        ps: '0 10px 20px 5px rgba(0, 0, 0, .3)',
+        ns: '0 -10px 20px 5px rgba(0, 0, 0, .6)',
+      },
     },
     colors: {
       primary: '#5979fb',
