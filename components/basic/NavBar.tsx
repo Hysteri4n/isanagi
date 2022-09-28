@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable react/jsx-key */
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -9,14 +8,17 @@ import { MdOutlineAltRoute } from 'react-icons/Md';
 import logoType from '../../public/icons/logo-type.png';
 import MainMenu from './MainMenu';
 import PersonalFeature from './PersonalFeature';
-import LoginLogout from './LoginButton';
+import LoginButton from './LoginButton';
+import Login from './Login';
+import CreateAccount from './CreateAccount';
 
 function NavBar() {
   const [openMenu, setOpenMenu] = useState(false);
-  const [loginChanges, setLoginChanges] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
+  const [createAccountModal, setCreateAccount] = useState(false);
 
   return (
-    <nav className="flex shadow-ps items-center fixed top-0 w-full px-6 py-4 bg-dark2 justify-between item-stretch gap-4">
+    <nav className="flex shadow-ps items-center fixed top-0 w-full px-6 py-5 bg-dark2 justify-between gap-4">
       {openMenu && <MainMenu closeMainMenu={setOpenMenu} />}
       <div className="flex items-center gap-6">
         {/* main menu button */}
@@ -25,11 +27,10 @@ function NavBar() {
             setOpenMenu(true);
           }}
         >
-          <AiOutlineMenu className="text-xl text-white3 hover:brightness-125 ease-in-out duration-200 cursor-pointer" />
+          <AiOutlineMenu className="text-xxl text-white3 hover:brightness-125 ease-in-out duration-200 cursor-pointer" />
         </button>
 
         {/* navbar logo */}
-
         <a href="/" className="hidden items-center shrink-0 w-44 laptop:flex">
           <Image
             src={logoType}
@@ -40,25 +41,44 @@ function NavBar() {
       </div>
 
       {/* search bar */}
-      <div className=" w-full items-center flex bg-dark0 rounded-full tablet:mx-20">
+      <div className=" w-full items-center flex bg-dark0 rounded-full overflow-hidden tablet:mx-20">
         <div className="flex gap-2 px-5 border-r-2 border-dark3 items-center">
-          <MdOutlineAltRoute className="text-lg rotate-90 cursor-pointer text-white3 hover:brightness-125 ease-in-out duration-200" />
+          <button>
+            <MdOutlineAltRoute className="text-lg rotate-90 text-white3 hover:brightness-125 ease-in-out duration-200" />
+          </button>
         </div>
-        <div className="w-full relative">
-          <BiSearch className="absolute left-5 top-3 text-lg text-white3" />
+        <div className="w-full flex">
+          <button className="px-5 hover:brightness-125 ease-in-out duration-200">
+            <BiSearch className="text-lg text-white3" />
+          </button>
           <input
-            className="bg-dark0 py-3 pr-5 pl-16 capitalize w-full focus:outline-none rounded-full"
+            className="bg-dark0 text-sm py-3 pr-5 pl-0 capitalize w-full focus:outline-none"
             type="search"
             placeholder="search tittle, author or publisher..."
           />
         </div>
       </div>
 
-      {loginChanges && <PersonalFeature />}
-      {!loginChanges && <LoginLogout showPersonalFeature={setLoginChanges} />}
+      <LoginButton
+        showLoginModal={setLoginModal}
+        showCreateModal={setCreateAccount}
+      />
+
+      {loginModal && (
+        <Login
+          showLoginModal={setLoginModal}
+          showCreateModal={setCreateAccount}
+        />
+      )}
+      {createAccountModal && (
+        <CreateAccount
+          showLoginModal={setLoginModal}
+          showCreateModal={setCreateAccount}
+        />
+      )}
 
       {/* account upgrade */}
-      <button className="btn--sc btn--med uppercase hidden laptop:block">
+      <button className="btn--sc btn--sm uppercase hidden laptopHr:block">
         + upgrade
       </button>
     </nav>

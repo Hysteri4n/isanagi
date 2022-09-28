@@ -6,20 +6,39 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        xs: '1rem',
-        sm: '1.2rem',
-        med: '1.4rem',
+        xs: '.9rem',
+        sm: '1rem',
+        md: '1.2rem',
         lg: '1.6rem',
-        xl: '2rem',
+        xl: '1.8rem',
+        xxl: '2rem',
       },
       width: {
         auto: 'auto',
         full: '100%',
+        300: '300px',
+        350: '350px',
+        400: '400px',
+        450: '450px',
+        500: '500px',
+        550: '550px',
       },
       boxShadow: {
         ps: '0 10px 20px 5px rgba(0, 0, 0, .3)',
-        ns: '0 -10px 20px 5px rgba(0, 0, 0, .6)',
+        ns: '0 -10px 20px 5px rgba(0, 0, 0, .3)',
       },
+      left: {
+        n350: '-350px',
+      },
+    },
+    keyframes: {
+      slideRight: {
+        '0%': { transform: 'translateX(-100%)' },
+        '100%': { transform: 'translateX(0px)' },
+      },
+    },
+    Animation: {
+      slideRight: 'slideRight all 0.2s',
     },
     colors: {
       primary: '#5979fb',

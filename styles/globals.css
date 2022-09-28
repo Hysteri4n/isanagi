@@ -119,24 +119,24 @@ a {
 /* button size */
 
 .btn--sm {
-  font-size: 0.8rem;
-  padding: 8px 22px;
-  border-radius: 4px;
+  font-size: 0.9rem;
+  padding: 10px 22px;
+  border-radius: 6px;
 }
 .btn--sm--full {
-  font-size: 0.8rem;
-  padding: 8px 22px;
+  font-size: 0.9rem;
+  padding: 10px 22px;
   width: 100%;
   border-radius: 4px;
 }
 
-.btn--med {
+.btn--md {
   font-size: 1rem;
   padding: 12px 28px;
   border-radius: 6px;
 }
 
-.btn--med--full {
+.btn--md--full {
   font-size: 1rem;
   padding: 12px 28px;
   width: 100%;
