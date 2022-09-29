@@ -18,10 +18,10 @@ function CreateAccount({ showCreateModal, showLoginModal }) {
         className="bg-dark0 w-full h-full absolute -z-10 bg-opacity-40 top-0 left-0"
       ></div>
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className="bg-dark2 w-full h-full tablet:w-450 tablet:h-3/4 pt-12 pb-20 border border-dark3 flex items-center justify-center tablet:rounded-xl relative"
+        className="bgModal w-full h-full tablet:w-450 tablet:h-3/4 pt-12 pb-20 border border-dark3 flex items-center justify-center tablet:rounded-xl relative"
       >
         <button
           onClick={() => {
@@ -42,7 +42,7 @@ function CreateAccount({ showCreateModal, showLoginModal }) {
             <input
               type="email"
               placeholder="Email..."
-              className="py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:outline-primary focus:outline"
+              className="border border-dark3 py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:border-primary focus:outline-none"
             />
           </div>
           <div className="relative w-5/6">
@@ -52,7 +52,7 @@ function CreateAccount({ showCreateModal, showLoginModal }) {
             <input
               type="text"
               placeholder="User Name..."
-              className="py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:outline-primary focus:outline"
+              className="border border-dark3 py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:border-primary focus:outline-none"
             />
           </div>
           <div className="relative w-5/6">
@@ -62,7 +62,7 @@ function CreateAccount({ showCreateModal, showLoginModal }) {
             <input
               type="password"
               placeholder="Confirm Password..."
-              className="py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:outline-primary focus:outline"
+              className="border border-dark3 py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:border-primary focus:outline-none"
             />
             <button className="absolute flex right-5 top-3 text-white3 text-md">
               <FaEye />
@@ -75,7 +75,7 @@ function CreateAccount({ showCreateModal, showLoginModal }) {
             <input
               type="password"
               placeholder="Confirm Password..."
-              className="py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:outline-primary focus:outline"
+              className="border border-dark3 py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:border-primary focus:outline-none"
             />
             <button className="absolute flex right-5 top-3 text-white3 text-md">
               <FaEye />
@@ -90,7 +90,7 @@ function CreateAccount({ showCreateModal, showLoginModal }) {
               </Link>
             </label>
           </div>
-          <div className="w-5/6 flex gap-2">
+          <div className="w-5/6 flex gap-4">
             <button className="btn--md--full btn--pr capitalize">
               create account
             </button>

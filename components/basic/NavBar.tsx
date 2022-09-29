@@ -7,7 +7,6 @@ import { BiSearch } from 'react-icons/Bi';
 import { MdOutlineAltRoute } from 'react-icons/Md';
 import logoType from '../../public/icons/logo-type.png';
 import MainMenu from './MainMenu';
-import PersonalFeature from './PersonalFeature';
 import LoginButton from './LoginButton';
 import Login from './Login';
 import CreateAccount from './CreateAccount';
@@ -31,7 +30,7 @@ function NavBar() {
         </button>
 
         {/* navbar logo */}
-        <a href="/" className="hidden items-center shrink-0 w-44 laptop:flex">
+        <a href="/" className="hidden items-center shrink-0 w-36 laptop:flex">
           <Image
             src={logoType}
             alt="logo type"

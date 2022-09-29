@@ -20,7 +20,7 @@ function MainMenu({ closeMainMenu }) {
         initial={{ x: -350, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="flex flex-col fixed left-0 top-0 w-4/5 h-screen bg-dark2 z-20 tablet:w-350"
+        className="flex flex-col fixed left-0 top-0 w-4/5 h-screen bgModal z-20 tablet:w-350"
       >
         <div className="flex items-center gap-6 px-10 py-8">
           <span className="w-8 h-8">

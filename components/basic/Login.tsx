@@ -17,10 +17,10 @@ function Login({ showLoginModal, showCreateModal }) {
         className="bg-dark0 w-full h-full absolute -z-10 bg-opacity-40 top-0 left-0"
       ></div>
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className="bg-dark2 w-5/6 tablet:w-350 h-auto pt-12 pb-20 border border-dark3 flex relative items-center justify-center rounded-xl"
+        className="bgModal w-5/6 tablet:w-350 h-auto pt-12 pb-20 border border-dark3 flex relative items-center justify-center rounded-xl"
       >
         <button
           onClick={() => {
@@ -39,7 +39,7 @@ function Login({ showLoginModal, showCreateModal }) {
             <input
               type="email"
               placeholder="Email..."
-              className="py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:outline-primary focus:outline"
+              className="border border-dark3 py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:border-primary focus:outline-none"
             />
           </div>
           <div className="relative w-5/6">
@@ -49,7 +49,7 @@ function Login({ showLoginModal, showCreateModal }) {
             <input
               type="password"
               placeholder="Confirm Password..."
-              className="py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:outline-primary focus:outline"
+              className="border border-dark3 py-3 px-5 pl-14 bg-dark1 rounded-lg w-full focus:border-primary focus:outline-none"
             />
             <button className="absolute right-5 top-3 text-white3 text-md">
               <FaEye />
@@ -59,7 +59,7 @@ function Login({ showLoginModal, showCreateModal }) {
             <label className="capitalize text-xs">remember me</label>
             <input type="checkbox" checked className="accent-primary" />
           </div>
-          <div className="flex gap-3 w-5/6">
+          <div className="flex gap-4 w-5/6">
             <button type="submit" className="btn--md--full btn--pr capitalize">
               login
             </button>
