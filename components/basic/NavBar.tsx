@@ -17,7 +17,7 @@ function NavBar() {
   const [createAccountModal, setCreateAccount] = useState(false);
 
   return (
-    <nav className="flex shadow-ps items-center fixed top-0 w-full px-6 py-5 bg-dark2 justify-between gap-4">
+    <nav className=" fixed top-0 h-24 z-30 flex shadow-ps items-center w-full px-6 py-5 bg-dark1 justify-between gap-4">
       {openMenu && <MainMenu closeMainMenu={setOpenMenu} />}
       <div className="flex items-center gap-6">
         {/* main menu button */}
@@ -40,8 +40,8 @@ function NavBar() {
       </div>
 
       {/* search bar */}
-      <div className=" w-full items-center flex bg-dark0 rounded-full overflow-hidden tablet:mx-20">
-        <div className="flex gap-2 px-5 border-r-2 border-dark3 items-center">
+      <div className="w-full items-center flex bg-dark0 rounded-full overflow-hidden tablet:mx-20">
+        <div className="flex gap-2 px-5 border-r border-dark4 items-center">
           <button>
             <MdOutlineAltRoute className="text-lg rotate-90 text-white3 hover:brightness-125 ease-in-out duration-200" />
           </button>

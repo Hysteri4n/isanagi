@@ -9,7 +9,7 @@ import userPortrait from '../../public/images/portrait.jpeg';
 function personalFeature() {
   return (
     <div className="flex gap-12 items-center">
-      <div className="flex shadow-ns h-20 text-white3 shrink-0 pt-2 items-center text-med fixed bottom-0 left-0 w-full bg-dark0 laptop:pt-0 laptop:static laptop:shadow-none laptop:w-auto laptop:h-10 laptop:bg-opacity-0 laptop:gap-14">
+      <div className="flex shadow-ns h-20 text-white3 shrink-0 pt-2 items-center text-med fixed bottom-0 left-0 w-full bg-dark1 laptop:pt-0 laptop:static laptop:shadow-none laptop:w-auto laptop:h-10 laptop:bg-opacity-0 laptop:gap-14">
         {[
           [<FaBookOpen />, 'recents', ''],
           [<ImBooks />, 'library', ''],
