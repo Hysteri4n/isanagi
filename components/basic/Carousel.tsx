@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import '../../styles/store.module.css';
@@ -75,8 +75,9 @@ function Carousel() {
   const [autoPlay, setAutoPlay] = useState(true);
   let timeOut: boolean | NodeJS.Timeout | null | undefined = null;
 
-  useRef(() => {
+  useEffect(() => {
     timeOut =
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       autoPlay &&
       setTimeout(() => {
         slideRight();
