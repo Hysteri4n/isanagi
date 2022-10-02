@@ -92,17 +92,7 @@ function Carousel() {
 
   return (
     <div className=" w-full h-550 flex flex-col gap-10 laptopHr:flex-row">
-      <div
-        className="flex flex-col w-full h-full rounded-xl overflow-hidden relative"
-        onMouseEnter={() => {
-          setAutoPlay(false);
-          // @ts-ignore
-          clearTimeout(timeOut);
-        }}
-        onMouseLeave={() => {
-          setAutoPlay(true);
-        }}
-      >
+      <div className="flex flex-col w-full h-full rounded-xl overflow-hidden relative">
         {banner.map((item, index) => {
           return (
             <div
