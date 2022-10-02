@@ -81,7 +81,7 @@ function Carousel() {
       autoPlay &&
       setTimeout(() => {
         slideRight();
-      }, 4000);
+      }, 5000);
   });
 
   const slideRight = () => {
@@ -93,29 +93,29 @@ function Carousel() {
   };
 
   return (
-    <div className=" w-3/4 flex gap-6">
+    <div className=" w-full h-550 flex flex-col gap-10 laptopHr:flex-row">
       <div
-        className="flex flex-col w-full rounded-xl relative"
+        className="flex flex-col w-full h-full rounded-xl overflow-hidden relative"
         onMouseEnter={() => {
           setAutoPlay(false);
-          //@ts-ignore
+          // @ts-ignore
           clearTimeout(timeOut);
         }}
         onMouseLeave={() => {
           setAutoPlay(true);
         }}
       >
-        {banner.map((item, i) => {
+        {banner.map((item, index) => {
           return (
             <div
-              key={i}
+              key={index}
               className={
-                i == current ? 'banner-card banner-active' : 'banner-card'
+                index == current ? 'banner-card banner-active' : 'banner-card'
               }
             >
               <Link href={item.pageLink}>
-                <a className="relative w-full h-fit overflow-hidden rounded-xl">
-                  <div className="h-fit flex">
+                <a className="w-full">
+                  <div className="h-full flex">
                     <Image
                       src={item.image}
                       className="flex w-full h-full object-cover"
@@ -125,13 +125,13 @@ function Carousel() {
                   <div className="absolute top-0 left-0 h-32 w-32">
                     <Image src={item.badge} className="w-32 h-32" alt="" />
                   </div>
-                  <div className="absolute left-0 top-0 px-14 py-14 flex flex-col w-full h-full justify-end bgBanner">
-                    <h2 className="capitalize w-1/2 text-xxxl font-bold">
+                  <div className="absolute left-0 top-0 px-10 py-10 tablet:px-20 tablet:py-20 flex flex-col w-full h-full justify-end bgBanner">
+                    <h2 className="capitalize tablet:w-1/2 laptop:2/3 text-xxxl tablet:text-xxxxl font-bold leading-snug mb-4">
                       {item.tittle}
                     </h2>
-                    <p className="capitalize w-1/2 text-lg mb-10 font-medium">
+                    <div className="capitalize tablet:w-1/2 laptop:w-2/3 laptopHr:w-1/2 text-lg tablet:text-lg mb-12 font-medium">
                       {item.desc}
-                    </p>
+                    </div>
                     <div className="flex gap-4">
                       <button className="btn--pr btn--lg capitalize">
                         <Link href={item.readFirst}>
@@ -150,31 +150,31 @@ function Carousel() {
         })}
       </div>
 
-      <div className="bg-dark0 flex flex-col w-250 justify-between gap-2">
-        {banner.map((item, i) => (
+      <div className="bg-dark0 flex gap-6 shrink-0 justify-center items-center laptopHr:justify-between laptopHr:items-start laptopHr:flex-col laptopHr:w-250">
+        {banner.map((item, index) => (
           <div
-            key={i}
+            key={index}
             className={
-              i == current ? 'pagination pagination-active' : 'pagination'
+              index == current ? 'pagination pagination-active' : 'pagination'
             }
-            onClick={() => setCurrent(i)}
+            onClick={() => setCurrent(index)}
           >
-            <button className="flex gap-6 items-center w-full relative">
+            <button className="flex gap-6 items-center h-3 w-6 rounded-lg relative bg-dark1 laptopHr:bg-opacity-0 laptopHr:w-full laptopHr:h-auto ">
               <div className="handle-status"></div>
-              <div className="w-20 h-20 flex shrink-0">
+              <div className="w-20 h-20 hidden laptopHr:flex shrink-0">
                 <Image
                   src={item.image}
                   className="w-full h-full object-cover rounded-lg"
                   alt=""
                 />
               </div>
-              <div className="flex flex-col w-full z-10">
-                <h4 className="font-medium text-left capitalize truncate w-full">
+              <div className="flex-col laptopHr:w-full z-10 hidden laptopHr:flex">
+                <div className="font-medium text-left capitalize truncate laptopHr:w-f90">
                   {item.tittle}
-                </h4>
-                <p className="capitalize text-white3 text-left">
+                </div>
+                <div className="capitalize text-white3 text-left">
                   {item.chapter}
-                </p>
+                </div>
               </div>
             </button>
           </div>

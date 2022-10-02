@@ -17,7 +17,7 @@ function NavBar() {
   const [createAccountModal, setCreateAccount] = useState(false);
 
   return (
-    <nav className=" fixed top-0 h-24 z-30 flex shadow-ps items-center w-full px-6 py-5 bg-dark1 justify-between gap-4">
+    <nav className="sticky top-n72 h-24 z-30 flex shadow-ps items-center w-full px-6 py-5 bg-dark1 justify-between gap-4">
       {openMenu && <MainMenu closeMainMenu={setOpenMenu} />}
       <div className="flex items-center gap-6">
         {/* main menu button */}

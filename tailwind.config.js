@@ -12,7 +12,8 @@ module.exports = {
         lg: '1.6rem',
         xl: '1.8rem',
         xxl: '2rem',
-        xxxl: '4rem',
+        xxxl: '3rem',
+        xxxxl: '4rem',
       },
       width: {
         f10: '10%',
@@ -32,6 +33,7 @@ module.exports = {
         450: '450px',
         500: '500px',
         550: '550px',
+        600: '600px',
       },
       height: {
         f10: '10%',
@@ -51,6 +53,7 @@ module.exports = {
         450: '450px',
         500: '500px',
         550: '550px',
+        600: '600px',
       },
       boxShadow: {
         ps: '0 10px 30px 5px rgba(0, 0, 0, .2)',
@@ -58,6 +61,9 @@ module.exports = {
       },
       left: {
         n350: '-350px',
+      },
+      borderRadius: {
+        xxl: '20px',
       },
     },
     colors: {
@@ -76,11 +82,15 @@ module.exports = {
     fontFamily: {
       montserrat: ['montserrat', 'sans-serif'],
     },
+    top: {
+      72: '-72px',
+    },
     screens: {
       tablet: '640px',
       laptop: '1024px',
       laptopHr: '1280px',
       desktop: '1600px',
+      desktopHr: '1920px',
     },
   },
   plugins: [],
