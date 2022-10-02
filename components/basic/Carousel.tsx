@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import '../../styles/store.module.css';
 import { BsPlusLg } from 'react-icons/Bs';
 import bannerI from '../../public/images/banner1.png';
 import bannerII from '../../public/images/banner2.png';
@@ -91,7 +90,7 @@ function Carousel() {
   };
 
   return (
-    <div className=" w-full h-550 flex flex-col gap-10 laptopHr:flex-row">
+    <div className=" w-full h-[550px] flex flex-col gap-10 laptopHr:flex-row">
       <div className="flex flex-col w-full h-full rounded-xl overflow-hidden relative">
         {banner.map((item, index) => {
           return (
@@ -139,7 +138,7 @@ function Carousel() {
         })}
       </div>
 
-      <div className="bg-dark0 flex gap-6 shrink-0 justify-center items-center laptopHr:justify-between laptopHr:items-start laptopHr:flex-col laptopHr:w-250">
+      <div className="bg-dark0 flex gap-6 shrink-0 justify-center items-center laptopHr:justify-between laptopHr:items-start laptopHr:flex-col laptopHr:w-[250px]">
         {banner.map((item, index) => (
           <div
             key={index}
@@ -153,7 +152,7 @@ function Carousel() {
               <div className="w-20 h-20 hidden laptopHr:flex shrink-0">
                 <Image
                   src={item.image}
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-xl"
                   alt=""
                 />
               </div>
