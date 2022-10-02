@@ -76,12 +76,10 @@ function Carousel() {
   let timeOut: boolean | NodeJS.Timeout | null | undefined = null;
 
   useEffect(() => {
-    timeOut =
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      autoPlay &&
-      setTimeout(() => {
-        slideRight();
-      }, 5000);
+    const timeOut = setTimeout(slideRight, 5000);
+    return () => {
+      clearTimeout(timeOut);
+    };
   });
 
   const slideRight = () => {
@@ -114,11 +112,12 @@ function Carousel() {
               }
             >
               <Link href={item.pageLink}>
-                <a className="w-full">
+                <div className="w-full h-full">
                   <div className="h-full flex">
                     <Image
                       src={item.image}
                       className="flex w-full h-full object-cover"
+                      placeholder="blur"
                       alt=""
                     />
                   </div>
@@ -126,9 +125,9 @@ function Carousel() {
                     <Image src={item.badge} className="w-32 h-32" alt="" />
                   </div>
                   <div className="absolute left-0 top-0 px-10 py-10 tablet:px-20 tablet:py-20 flex flex-col w-full h-full justify-end bgBanner">
-                    <h2 className="capitalize tablet:w-1/2 laptop:2/3 text-xxxl tablet:text-xxxxl font-bold leading-snug mb-4">
+                    <div className="capitalize tablet:w-1/2 laptop:2/3 text-xxxl tablet:text-xxxxl font-bold leading-snug mb-4">
                       {item.tittle}
-                    </h2>
+                    </div>
                     <div className="capitalize tablet:w-1/2 laptop:w-2/3 laptopHr:w-1/2 text-lg tablet:text-lg mb-12 font-medium">
                       {item.desc}
                     </div>
@@ -143,7 +142,7 @@ function Carousel() {
                       </button>
                     </div>
                   </div>
-                </a>
+                </div>
               </Link>
             </div>
           );
