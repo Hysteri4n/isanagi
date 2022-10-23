@@ -5,22 +5,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontSize: {
-        xs: '.9rem',
-        sm: '1rem',
-        md: '1.2rem',
-        lg: '1.6rem',
-        xl: '1.8rem',
-        xxl: '2rem',
-        xxxl: '3rem',
-        xxxxl: '4rem',
-      },
       boxShadow: {
         ps: '0 10px 30px 5px rgba(0, 0, 0, .2)',
         ns: '0 -10px 30px 5px rgba(0, 0, 0, .2)',
       },
     },
     colors: {
+      black: '#000000',
       primary: '#5979fb',
       secondary: '#f2a934',
       white: '#ffffff',
@@ -33,15 +24,12 @@ module.exports = {
       dark3: '#2c3046',
       dark4: '#323a58',
     },
-    fontFamily: {
-      montserrat: ['montserrat', 'sans-serif'],
-    },
     screens: {
       tablet: '640px',
       laptop: '1024px',
       laptopHr: '1280px',
       desktop: '1600px',
-      desktopHr: '1920px',
+      desktopHr: '1800px',
     },
   },
   plugins: [],

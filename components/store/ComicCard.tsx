@@ -1,7 +1,5 @@
 import React from 'react';
 
-function itemCard() {
+export default function ComicCard() {
   return <div></div>;
 }
-
-export default itemCard;
