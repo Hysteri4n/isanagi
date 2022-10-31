@@ -3,7 +3,7 @@ import Head from 'next/head';
 import LayOut from '../components/basic/LayOut';
 
 // @ts-ignore
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, fetchStore }) {
   return (
     <LayOut>
       <Head>

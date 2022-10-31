@@ -62,7 +62,7 @@ function Login({ showLoginModal, showCreateModal }) {
           </div>
           <div className="flex items-center gap-4 w-full px-2 py-4 justify-end">
             <label className="capitalize text-sm">remember me</label>
-            <input type="checkbox" checked className="accent-primary" />
+            <input type="checkbox" className="accent-primary" />
           </div>
           <div className="flex gap-4 w-full">
             <button type="submit" className="btn--md--full btn--pr capitalize">

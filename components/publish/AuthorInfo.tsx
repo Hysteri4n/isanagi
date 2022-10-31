@@ -12,8 +12,8 @@ export default function AuthorInfo() {
   ];
 
   return (
-    <div className="flex flex-col gap-4 w-full overflow-auto resize-x">
-      <h1 className="sticky top-[70px] z-10 bg-dark2 outline outline-dark2 capitalize text-[1.4rem] font-semibold px-5 py-5">
+    <div className="flex flex-col gap-4 w-full">
+      <h1 className="sticky top-0 z-10 bg-dark2 outline outline-dark2 capitalize text-[1.4rem] font-semibold px-5 py-5">
         fill author info
       </h1>
       <div className="flex flex-col gap-12 w-full">
@@ -22,9 +22,9 @@ export default function AuthorInfo() {
             <h1 className="px-5 font-medium capitalize whitespace-nowrap">
               author 1
             </h1>
-            <span className="h-[1px] w-full bg-dark3 mr-5"></span>
+            <span className="h-[1px] w-full bg-dark3"></span>
           </div>
-          <div className="flex flex-col tablet:flex-row gap-4 w-full">
+          <div className="flex flex-col tablet:flex-row gap-4 w-fulll">
             <div className="flex flex-col gap-2 w-full">
               <label className="capitalize text-grey px-5 text-sm ">
                 author name
@@ -38,7 +38,7 @@ export default function AuthorInfo() {
               </div>
             </div>
             <div className="w-full flex flex-col gap-2">
-              <label className="capitalize text-grey px-5 text-md text-sm">
+              <label className="capitalize text-grey px-5 text-sm">
                 author role
               </label>
               <select className="dropDown ddFull">
@@ -86,9 +86,8 @@ export default function AuthorInfo() {
                 />
               </div>
             </div>
-
             <div className="w-full flex flex-col gap-2">
-              <label className="capitalize text-grey px-5 text-md text-sm">
+              <label className="capitalize text-grey px-5 text-sm">
                 author role
               </label>
               <select className="dropDown ddFull">
@@ -138,7 +137,7 @@ export default function AuthorInfo() {
             </div>
 
             <div className="w-full flex flex-col gap-2">
-              <label className="capitalize text-grey px-5 text-md text-sm">
+              <label className="capitalize text-grey px-5 text-sm">
                 author role
               </label>
               <select className="dropDown ddFull">

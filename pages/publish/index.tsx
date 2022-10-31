@@ -1,54 +1,78 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable react/jsx-key */
 import Link from 'next/link';
-import { ReactEventHandler, useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+const points = [
+  {
+    tribe: 'original',
+    desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste neque accusantium reiciendis veniam, sint cum nesciunt mollitia libero, eligendi quaerat ut laboriosam commodi cumque dolores corporis quos cumque dolores.',
+  },
+  {
+    tribe: 'publisher',
+    desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste neque accusantium reiciendis veniam, sint cum nesciunt mollitia libero, eligendi quaerat ut laboriosam commodi cumque dolores corporis quos cumque dolores corporis quos.',
+  },
+  {
+    tribe: 'self publisher',
+    desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste neque accusantium reiciendis veniam, sint cum nesciunt mollitia libero, eligendi quaerat ut laboriosam commodi cumque dolores corporis quos.',
+  },
+];
+
 const publishQnA = [
-  [
-    'Do I keep the rights of my works when publishing on Isanagi?',
-    'Depands on type of publication that you choose. if you publish as a self-publisher or as a publisher, the ownership and the right of publication is yours. but if you publish as as an original creator the ownership belongs to you but the rights of publication back to Isanagi',
-  ],
-  [
-    'Can i publish a comic i have publish on other media or website?',
-    'Yes you can! as long you owned the right of publication and ownership of your comic. but if you dont, please ask your publisher or the owner of publication to publish it on Isanagi',
-  ],
-  [
-    'How much cut percentage does Isanagi take from my comic sales? ',
-    'Isangi will cut 15%-25% of every sale you make. depands on publication type that you choose. please read publication manual to get more info about it.',
-  ],
-  [
-    'Can i publish a comic i have publish on other media or website?',
-    'You can publish as many tittle as you want. but you could only run a series one at a time.',
-  ],
-  [
-    'Is any type of comic allowed? What about nudity?',
-    'Isanagi allowed any type of comics, any type of genre. but Isanagi prohibited any type of comic that presents sensitive issues or exposed too much nudity.',
-  ],
-  [
-    'Do I keep the rights to my work when publishing on Isanagi?',
-    'Depands on type of publication that you choose. if you publish as a self-publisher or as a publisher, the ownership and the right of publication is yours. but if you publish as as an original creator the ownership belongs to you but the rights of publication back to Isanagi',
-  ],
-  [
-    'Can i publish a comic i have publish on other media or website?',
-    'Yes you can! as long you owned the right of publication and ownership of your comic. but if you dont, please ask your publisher or the owner of publication to publish it on Isanagi',
-  ],
-  [
-    'Can i publish a comic i have publish on other media or website?',
-    'You can publish as many tittle as you want. but you could only run a series one at a time.',
-  ],
-  [
-    'How much cut percentage does Isanagi take from my comic sales? ',
-    'Isangi will cut 15%-25% of every sale you make. depands on publication type that you choose. please read publication manual to get more info about it.',
-  ],
-  [
-    'Is any type of comic allowed? What about nudity?',
-    'Isanagi allowed any type of comics, any type of genre. but Isanagi prohibited any type of comic that presents sensitive issues or expose too much nudity.',
-  ],
+  {
+    question: 'Do I keep the rights of my works when publishing on Isanagi?',
+    answer:
+      'Depands on type of publication that you choose. if you publish as a self-publisher or as a publisher, the ownership and the right of publication is yours. but if you publish as as an original creator the ownership belongs to you but the rights of publication back to Isanagi',
+  },
+  {
+    question: 'Can i publish a comic i have publish on other media or website?',
+    answer:
+      'Yes you can! as long you owned the right of publication and ownership of your comic. but if you dont, please ask your publisher or the owner of publication to publish it on Isanagi',
+  },
+  {
+    question: 'How much cut percentage does Isanagi take from my comic sales? ',
+    answer:
+      'Isangi will cut 15%-25% of every sale you make. depands on publication type that you choose. please read publication manual to get more info about it.',
+  },
+  {
+    question: 'Can i publish a comic i have publish on other media or website?',
+    answer:
+      'You can publish as many tittle as you want. but you could only run a series one at a time.',
+  },
+  {
+    question: 'Is any type of comic allowed? What about nudity?',
+    answer:
+      'Isanagi allowed any type of comics, any type of genre. but Isanagi prohibited any type of comic that presents sensitive issues or exposed too much nudity.',
+  },
+  {
+    question: 'Do I keep the rights to my work when publishing on Isanagi?',
+    answer:
+      'Depands on type of publication that you choose. if you publish as a self-publisher or as a publisher, the ownership and the right of publication is yours. but if you publish as as an original creator the ownership belongs to you but the rights of publication back to Isanagi',
+  },
+  {
+    question: 'Can i publish a comic i have publish on other media or website?',
+    answer:
+      'Yes you can! as long you owned the right of publication and ownership of your comic. but if you dont, please ask your publisher or the owner of publication to publish it on Isanagi',
+  },
+  {
+    question: 'Can i publish a comic i have publish on other media or website?',
+    answer:
+      'You can publish as many tittle as you want. but you could only run a series one at a time.',
+  },
+  {
+    question: 'How much cut percentage does Isanagi take from my comic sales? ',
+    answer:
+      'Isangi will cut 15%-25% of every sale you make. depands on publication type that you choose. please read publication manual to get more info about it.',
+  },
+  {
+    question: 'Is any type of comic allowed? What about nudity?',
+    answer:
+      'Isanagi allowed any type of comics, any type of genre. but Isanagi prohibited any type of comic that presents sensitive issues or expose too much nudity.',
+  },
 ];
 
 export default function publish() {
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [current, setCurrent] = useState(0);
   const [tribeOption, setTribeOption] = useState(false);
 
   return (
@@ -78,9 +102,9 @@ export default function publish() {
                   create draft as :
                 </h1>
                 <div className="w-full flex flex-col gap-6">
-                  <Link href={'/publish/official-draft'}>
+                  <Link href={'/publish/original-draft'}>
                     <button className="btn--pr btn--lg--full capitalize">
-                      official
+                      original
                     </button>
                   </Link>
                   <button className="btn--pr btn--lg--full capitalize">
@@ -133,45 +157,74 @@ export default function publish() {
         </p>
       </div>
       <div className="w-full flex justify-center bg-dark1 ">
-        <div className="w-full flex items-center flex-col gap-10  px-4 py-10 pb-20 max-w-[1000px]">
-          <h1 className="text-[1.2rem] tablet:text-[2rem] w-full laptop:pt-16 laptop:pb-4">
+        <div className="w-full flex items-center flex-col gap-8 tablet:gap-4 px-4 py-10 pb-20 max-w-[1000px]">
+          <h1 className="text-[1.6rem] tablet:text-[2rem] w-full laptop:pt-16 laptop:pb-8 capitalize">
+            why you should publish on isanagi.
+          </h1>
+          <div className="w-full flex flex-col laptop:flex-row gap-6 mb-8">
+            {points.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="w-full flex flex-col px-6 py-6 tablet:px-10 tablet:py-10 bg-dark2 rounded-lg gap-2"
+                >
+                  <h1 className="text-lg tablet:text-xl font-bold capitalize">
+                    {item.tribe}
+                  </h1>
+                  <p className="text-md text-white3 h-full">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+          <h1 className="text-[1.6rem] tablet:text-[2rem] w-full laptop:pt-16 laptop:pb-8">
             Publishing FAQ :
           </h1>
           <div className="w-full flex flex-col gap-6">
-            {publishQnA.map(([question, answer]) => (
+            {publishQnA.map((item, index) => (
               <div
-                onClick={() => {
-                  setShowAnswer(true);
-                }}
-                className="w-full cursor-pointer flex flex-col drop-shadow-md gap-2 bg-dark2 rounded-lg px-6 py-4 tablet:px-10 tablet:py-6 hover:brightness-125 ease-in-out duration-200"
+                key={index}
+                className="w-full cursor-pointer flex flex-col drop-shadow-md gap-2 bg-dark2 rounded-lg px-6 py-6 tablet:px-10 tablet:py-10 hover:brightness-125 ease-in-out duration-200"
+                onClick={() => setCurrent(index)}
               >
                 <div className="w-full flex gap-4">
-                  {!showAnswer && (
-                    <span className="text-sm tablet:text-lg font-extrabold">
-                      +
-                    </span>
-                  )}
-                  {showAnswer && (
-                    <span className="text-sm tablet:text-lg font-extrabold">
-                      -
-                    </span>
-                  )}
-                  <p className=" text-sm tablet:text-lg font-semibold">
-                    {question}
+                  <span
+                    className={
+                      index == current
+                        ? 'text-md tablet:text-xl font-extrabold'
+                        : 'hidden'
+                    }
+                  >
+                    -
+                  </span>
+                  <span
+                    className={
+                      index == current
+                        ? 'hidden'
+                        : 'text-md tablet:text-xl font-extrabold'
+                    }
+                  >
+                    +
+                  </span>
+
+                  <p className=" text-lg tablet:text-xl font-semibold">
+                    {item.question}
                   </p>
                 </div>
-                {showAnswer && (
-                  <p className="text-sm tablet:text-lg font-light text-grey">
-                    {answer}
-                  </p>
-                )}
+
+                <p
+                  className={
+                    index == current ? 'text-md text-white3' : 'hidden'
+                  }
+                >
+                  {item.answer}
+                </p>
               </div>
             ))}
           </div>
-          <p className="capitalize text-sm w-full">
+          <p className="capitalize text-sm w-full mt-8">
             please read
             <Link href={'/creators-guideline'}>
-              <a className="text-primary text-sm hover:brightness-125 ease-in-out duration-200">
+              <a className="text-primary text-md hover:brightness-125 ease-in-out duration-200">
                 {' '}
                 publishing manual{' '}
               </a>

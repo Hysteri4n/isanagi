@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BiSearch } from 'react-icons/Bi';
 import { FaUser } from 'react-icons/Fa';
@@ -16,8 +17,22 @@ export default function NavBar() {
   const [loginModal, setLoginModal] = useState(false);
   const [createAccountModal, setCreateAccount] = useState(false);
 
+  /*   const NavHeader = `
+    background-color: transparent;
+    height: 60px;
+    opacity: 1;
+  `;
+
+  useEffect(() => {
+    const scroll = (event) => {
+      console.log(window.scrollY);
+    };
+    window.addEventListener('scroll', scroll, false);
+    return () => window.removeEventListener('scroll', scroll, false);
+  }, []); */
+
   return (
-    <nav className="fixed top-0 z-30 h-[70px] flex shadow-lg items-center w-full px-4 tablet:px-6 py-4 bg-dark2 justify-between gap-4">
+    <nav className="sticky top-[-70px] z-30 h-[70px] flex shadow-lg items-center w-full px-4 tablet:px-6 py-4 bg-dark2 justify-between gap-4">
       <AnimatePresence>
         {openMenu && <MainMenu closeMainMenu={setOpenMenu} />}
       </AnimatePresence>
@@ -43,7 +58,7 @@ export default function NavBar() {
 
       {/* search bar */}
       <div className="w-full items-center flex bg-dark0 rounded-full overflow-hidden tablet:mx-20">
-        <div className="flex gap-2 pl-5 pr-4 border-r border-dark4 items-center">
+        <div className="flex gap-2 pl-4 pr-4 border-r border-dark4 items-center">
           <button>
             <MdOutlineAltRoute className="text-xl rotate-90 text-white3 hover:brightness-125 ease-in-out duration-200" />
           </button>
@@ -106,9 +121,11 @@ export default function NavBar() {
         >
           login
         </button>
-        <button className="btn--sc btn--sm uppercase hidden laptopHr:block">
-          + upgrade
-        </button>
+        <Link href="/plan">
+          <a className="btn--sc btn--sm uppercase hidden laptopHr:block">
+            + upgrade
+          </a>
+        </Link>
       </div>
     </nav>
   );

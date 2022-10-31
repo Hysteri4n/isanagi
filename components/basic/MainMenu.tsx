@@ -63,49 +63,49 @@ function MainMenu({ closeMainMenu }) {
           </span>
         </div>
         <div className="flex flex-col py-2 border-t border-dark3">
-          {mains.map(([icon, title, url]) => (
+          {mains.map(([icon, tittle, url]) => (
             //@ts-ignore
-            <Link href={url}>
+            <Link href={url} key={tittle}>
               <a
                 onClick={() => {
                   closeMainMenu(false);
                 }}
-                className="flex text-lg items-center gap-6 px-10 py-3 hover:bg-primary capitalize ease-in-out duration-200"
+                className="flex text-lg items-center gap-6 px-10 py-2 hover:bg-primary capitalize ease-in-out duration-200"
               >
                 {icon}
-                <p className="text-sm">{title}</p>
+                <p className="text-sm">{tittle}</p>
               </a>
             </Link>
           ))}
         </div>
         <div className="flex flex-col py-2 border-t border-dark3">
-          {adts.map(([icon, title, url]) => (
+          {adts.map(([icon, tittle, url]) => (
             //@ts-ignore
-            <Link href={url}>
+            <Link href={url} key={tittle}>
               <a
                 onClick={() => {
                   closeMainMenu(false);
                 }}
-                className="flex text-lg items-center gap-6 px-10 py-3 hover:bg-primary capitalize ease-in-out duration-200"
+                className="flex text-lg items-center gap-6 px-10 py-2 hover:bg-primary capitalize ease-in-out duration-200"
               >
                 {icon}
-                <p className="text-sm">{title}</p>
+                <p className="text-sm">{tittle}</p>
               </a>
             </Link>
           ))}
         </div>
         <div className="flex flex-col py-2 border-t border-dark3">
-          {supports.map(([icon, title, url]) => (
+          {supports.map(([icon, tittle, url]) => (
             //@ts-ignore
-            <Link href={url}>
+            <Link href={url} key={tittle}>
               <a
                 onClick={() => {
                   closeMainMenu(false);
                 }}
-                className="flex text-lg items-center gap-6 px-10 py-3 hover:bg-primary capitalize ease-in-out duration-200"
+                className="flex text-lg items-center gap-6 px-10 py-2 hover:bg-primary capitalize ease-in-out duration-200"
               >
                 {icon}
-                <p className="text-sm">{title}</p>
+                <p className="text-sm">{tittle}</p>
               </a>
             </Link>
           ))}

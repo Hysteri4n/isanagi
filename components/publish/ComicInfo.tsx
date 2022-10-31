@@ -8,7 +8,7 @@ export default function ComicInfo() {
 
   return (
     <div className="flex flex-col gap-8 w-full">
-      <h1 className="sticky top-[70px] z-10 bg-dark2 outline outline-dark2 capitalize text-[1.4rem] font-semibold px-5 py-5">
+      <h1 className="sticky top-0 z-10 bg-dark2 outline outline-dark2 capitalize text-[1.4rem] font-semibold px-5 py-5">
         fill comic info
       </h1>
 

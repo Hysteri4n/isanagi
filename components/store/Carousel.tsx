@@ -90,7 +90,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className=" w-full h-[540px] flex flex-col px-4 tablet:px-0 gap-6 laptop:flex-row">
+    <div className=" w-full h-[560px] flex flex-col px-4 tablet:px-0 gap-6 laptop:flex-row">
       <div className="flex flex-col w-full h-full rounded-xl overflow-hidden relative">
         {banner.map((item, index) => {
           return (
@@ -107,11 +107,12 @@ export default function Carousel() {
                       src={item.image}
                       className="flex w-full h-full object-cover"
                       placeholder="blur"
+                      loading="lazy"
                       alt=""
                     />
                   </div>
-                  <div className="absolute top-0 left-0 h-32 w-32">
-                    <Image src={item.badge} className="w-32 h-32" alt="" />
+                  <div className="absolute top-0 left-0 w-24 h-24 tablet:w-32 tablet:h-32">
+                    <Image src={item.badge} className="" alt="" />
                   </div>
                   <div className="absolute left-0 top-0 px-10 py-10 tablet:px-14 tablet:py-14 flex flex-col w-full h-full justify-end bgBanner">
                     <div className="capitalize tablet:w-1/2 laptop:2/3 text-[2rem] tablet:text-[3rem] font-bold leading-snug mb-2">
@@ -121,11 +122,11 @@ export default function Carousel() {
                       {item.desc}
                     </div>
                     <div className="flex gap-4">
-                      <button className="btn--pr btn--lg capitalize">
-                        <Link href={item.readFirst}>
-                          <a>read first chapter</a>
-                        </Link>
-                      </button>
+                      <Link href={item.readFirst}>
+                        <a className="btn--pr btn--lg capitalize">
+                          read first chapter
+                        </a>
+                      </Link>
                       <button className="btn--sc px-[18px] py-2 rounded-lg">
                         <BsPlusLg />
                       </button>
@@ -153,6 +154,7 @@ export default function Carousel() {
                 <Image
                   src={item.image}
                   className="w-full h-full object-cover rounded-lg"
+                  loading="lazy"
                   alt=""
                 />
               </div>
